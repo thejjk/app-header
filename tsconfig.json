@@ -1,0 +1,32 @@
+{
+  "extends": "ts-config-single-spa",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "emitDeclarationOnly": false,
+    "jsx": "react-jsx",
+    "paths": { "react": [ "./node_modules/@types/react",
+    
+    ], 
+  
+    "src/*": [
+      "./src/*"
+  ],
+  }
+  },
+  "include": ["src", "custom.d.ts", "styled.d.ts"],
+  "exclude": ["node_modules", "./storybook", "dist"],
+  "types": ["typePatches"]
+}
