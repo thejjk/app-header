@@ -216,7 +216,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/management/transactions"
+                  to="portal/management/transactions"
                   startIcon={<TableChartTwoToneIcon />}
                 >
                   Transactions List

@@ -1,7 +1,8 @@
-import { FC, useState, createContext } from 'react';
+import { createContext, FC, useState } from 'react';
+
 type SidebarContext = {
   sidebarToggle: any;
-  toggleSidebar: () => void;
+  toggleSidebar: (event) => void;
   closeSidebar: () => void;
 };
 
@@ -10,11 +11,23 @@ export const SidebarContext = createContext<SidebarContext>(
   {} as SidebarContext
 );
 
+
+
 export const SidebarProvider: FC = ({ children }) => {
   const [sidebarToggle, setSidebarToggle] = useState(false);
-  const toggleSidebar = () => {
+
+  function emitEvent(name, data) {
+    dispatchEvent(new CustomEvent(name, {
+      detail: data,
+    }))
+  }
+
+  const toggleSidebar = event => {
     setSidebarToggle(!sidebarToggle);
+    event.preventDefault()
+    emitEvent('@mc/react-route/todo/add-task', true)
   };
+
   const closeSidebar = () => {
     setSidebarToggle(false);
   };

@@ -70,7 +70,7 @@ function Header() {
         >
           <Tooltip arrow title="Toggle Menu">
             <IconButton color="primary" onClick={toggleSidebar}>
-              {!sidebarToggle ? (
+              {true ? (
                 <MenuTwoToneIcon fontSize="small" />
               ) : (
                 <CloseTwoToneIcon fontSize="small" />
